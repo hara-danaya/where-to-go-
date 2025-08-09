@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="My Daily Blog - Thoughts, Stories, and Updates">
+  <title>My Daily Blog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    nav {
+      background: #444;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    article {
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    article h2 {
+      color: #222;
+    }
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+    .date {
+      color: gray;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Daily Blog</h1>
+    <p>Sharing my thoughts every day</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <main id="blog-posts">
+    <!-- Blog posts will be inserted here -->
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> My Daily Blog. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Example blog posts
+    const posts = [
+      {
+        title: "First Post",
+        date: "2025-08-09",
+        content: "Welcome to my daily blog! Today I’m starting something exciting—writing every day and sharing my thoughts online."
+      },
+      {
+        title: "Day 2 - A New Journey",
+        date: "2025-08-10",
+        content: "It’s my second day writing here. The goal is simple: show up, write, and connect with people."
+      }
+    ];
+
+    const blogContainer = document.getElementById("blog-posts");
+    posts.forEach(post => {
+      const article = document.createElement("article");
+      article.innerHTML = `
+        <h2>${post.title}</h2>
+        <p class="date">${post.date}</p>
+        <p>${post.content}</p>
+      `;
+      blogContainer.appendChild(article);
+    });
+
+    // Footer Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
